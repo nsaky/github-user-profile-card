@@ -6,11 +6,11 @@
 
 body{
     background-color: #222222;
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 nav{
-    padding: 1.5rem 4rem;
+    padding: 1.2rem 6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,12 +25,11 @@ nav{
     align-items: center;
     gap: 1rem;
     font-size: 3rem;
-    color: #F5E7C6;
+    color: #FAF3E1;
 }
 
 .logo i{
     font-size: 2.5rem;
-    color: #FAF3E1;
 }
 
 .logo p{
