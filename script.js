@@ -3,6 +3,18 @@ let searchBtn= document.querySelector("#search-btn")
 
 // get username from searchbar
 function getUsername() {
+    // render functions
+    let renderSection= document.querySelector(".renderSection")
+    renderSection.innerHTML=""
+
+    renderSection.innerHTML= `<div class="card">
+            </div>
+
+            <div class="repo-container">
+            </div>`
+
+    renderSection.style.justifyContent= "space-between"
+
     let searchVal = searchBar.value.trim();
     console.log(searchVal);
     return searchVal
@@ -49,20 +61,17 @@ async function getData(){
     let username= getUsername()
 
     let profileData= await getProfile(username)
+    console.log(profileData)
     renderProfile(profileData)
-    console.log(profileData) 
 
     let reposData= await getRepos(username)
-    renderRepos(reposData)
     console.log(reposData)
+    renderRepos(reposData)
 }
 
-
-// render functions
-
 // render function for profile card
-let card = document.querySelector(".card")
 function renderProfile(profileData){
+    let card = document.querySelector(".card")
     if (profileData.bio===null){
         profileData.bio=""
     }
@@ -138,8 +147,8 @@ const langColors = {
 };
 
 // render function for repo cards
-let repoContainer= document.querySelector(".repo-container")
 function renderRepos(reposData){
+    let repoContainer= document.querySelector(".repo-container")
     let reposHTML= `<h2 class="section-title">Top 5 Recently Updated Repositories</h2>
                     <div class="repo-list">`
     reposData.forEach((elem)=>{
