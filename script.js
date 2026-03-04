@@ -91,6 +91,42 @@ function renderProfile(profileData){
             </div>`
 }
 
+// a dictionary of colour associated to popular coding languages.
+const langColors = {
+  "JavaScript": "#f1e05a",
+  "HTML": "#e34c26",
+  "CSS": "#563d7c",
+  "Python": "#3572A5",
+  "Java": "#b07219",
+  "TypeScript": "#3178c6",
+  "C": "#555555",
+  "C++": "#f34b7d",
+  "C#": "#178600",
+  "PHP": "#4F5D95",
+  "Ruby": "#701516",
+  "Go": "#00ADD8",
+  "Rust": "#dea584",
+  "Dart": "#00B4AB",
+  "Swift": "#F05138",
+  "Kotlin": "#A97BFF",
+  "Shell": "#89e051",
+  "Vue": "#41b883",
+  "SCSS": "#c6538c",
+  "Objective-C": "#438eff",
+  "Scala": "#c22d40",
+  "Elixir": "#6e4a7e",
+  "Haskell": "#5e5086",
+  "Lua": "#000080",
+  "Clojure": "#db5855",
+  "Perl": "#0298c3",
+  "R": "#198CE7",
+  "Jupyter Notebook": "#DA5B0B",
+  "Assembly": "#6E4C13",
+  "Svelte": "#ff3e00",
+  "Dockerfile": "#384d54",
+  "Fallback": "#cccccc"
+};
+
 // render function for repo cards
 let repoContainer= document.querySelector(".repo-container")
 function renderRepos(reposData){
@@ -101,9 +137,9 @@ function renderRepos(reposData){
                     <div class="repo-card">
                         <div class="repo-info">
                             <h3 class="repo-name">${elem.name}</h3>
-                            <p class="repo-desc">${elem.description===null?"No Description is available for this repo":elem.description}</p>
+                            <p class="repo-desc" ${elem.description===null?style="color: #8d9094":style=""}>${elem.description===null?"No Description is available for this repo":elem.description}</p>
                             <div class="repo-meta">
-                                <span class="lang-dot" style="background-color: #e34c26;"></span>
+                                <span class="lang-dot" style="background-color: ${langColors[elem.language]===undefined?langColors["Fallback"]:langColors[elem.language]};"></span>
                                 <span class="lang-name">${elem.language===null?"No Primary Language":elem.language}</span>
                             </div>
                         </div>
