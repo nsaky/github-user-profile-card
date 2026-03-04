@@ -102,10 +102,10 @@ function renderRepos(reposData){
                     <div class="repo-card">
                         <div class="repo-info">
                             <h3 class="repo-name">${elem.name}</h3>
-                            <p class="repo-desc">${elem.description}</p>
+                            <p class="repo-desc">${elem.description===null?"No Description is available for this repo":elem.description}</p>
                             <div class="repo-meta">
                                 <span class="lang-dot" style="background-color: #e34c26;"></span>
-                                <span class="lang-name">${elem.language}</span>
+                                <span class="lang-name">${elem.language===null?"No Primary Language":elem.language}</span>
                             </div>
                         </div>
                         <div class="repo-stats">
