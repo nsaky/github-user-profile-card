@@ -64,7 +64,7 @@ function renderProfile(profileData){
                 </div>
 
                 <h1 class="name">${profileData.name}</h1>
-                <p class="handle">${profileData.username}</p>
+                <p class="handle">@${profileData.username}</p>
                 <p class="bio">${profileData.bio}</p>
 
                 <hr class="divider">
@@ -94,11 +94,10 @@ function renderProfile(profileData){
 // render function for repo cards
 let repoContainer= document.querySelector(".repo-container")
 function renderRepos(reposData){
-    let reposHTML= `<h2 class="section-title">Top 5 Recently Updated Repositories</h2>`
+    let reposHTML= `<h2 class="section-title">Top 5 Recently Updated Repositories</h2>
+                    <div class="repo-list">`
     reposData.forEach((elem)=>{
-        reposHTML+=`<a href="${elem.repoLink}">
-                <div class="repo-list">
-                    
+        reposHTML+=`<a href="${elem.repoLink}" target="_blank">
                     <div class="repo-card">
                         <div class="repo-info">
                             <h3 class="repo-name">${elem.name}</h3>
@@ -121,5 +120,6 @@ function renderRepos(reposData){
                     </div>
             </a>`
     })
+    renderRepos+="</div>"
     repoContainer.innerHTML=reposHTML
 }
