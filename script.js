@@ -175,6 +175,6 @@ function renderRepos(reposData){
                     </div>
             </a>`
     })
-    renderRepos+="</div>"
+    reposHTML+="</div>"
     repoContainer.innerHTML=reposHTML
 }
